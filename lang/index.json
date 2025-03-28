@@ -1,0 +1,68 @@
+{
+	"g6bs2": {
+		"zh-cn": "孤独",
+		"ko": "외로움",
+		"ja": "孤独です",
+		"en": "solitude"
+	},
+	"d6lnji4": {
+		"zh-cn": "早上好啊",
+		"ko": "좋은 아침입니다.",
+		"ja": "おはようございます",
+		"en": "Good morning."
+	},
+	"d8lt254": {
+		"zh-cn": "晚上好啊",
+		"ko": "안녕하세요.",
+		"ja": "こんばんはですね",
+		"en": "Good evening."
+	},
+	"c7s4jhh": {
+		"zh-cn": "无水印下载130多个平台视频和图片",
+		"ko": "워터마크 없이 130개 이상의 플랫폼 동영상 및 사진 다운로드",
+		"ja": "130以上のプラットフォームのビデオと画像をダウンロードします透かしなし",
+		"en": "Download 130 + platform videos and images without watermark"
+	},
+	"rwgrla11": {
+		"zh-cn": "抖音去水印，快手去水印，小红书去水印，快速、高质量地移除视频水印或图片水印",
+		"ko": "톡톡 워터마크 제거, 빠른 손 워터마크 제거, 작은 빨간 책 워터마크 제거, 빠르고 고퀄리티 비디오 또는 그림 워터마크 제거",
+		"ja": "ティックトック音、速い手の透かしに行って、小さな赤い本の透かしに行って、すばやく、高品質のビデオの透かしや写真の透かしを除去します",
+		"en": "Douyin to remove watermark, fast hand to remove watermark, small red book to remove watermark, fast, high quality video or picture watermark"
+	},
+	"fifw857": {
+		"zh-cn": "请输入视频链接",
+		"ko": "비디오 링크를 입력해 주세요",
+		"ja": "ビデオのリンクをお願いします",
+		"en": "Please enter the video link"
+	},
+	"o0st2": {
+		"zh-cn": "解析",
+		"ko": "풀어",
+		"ja": "解析します",
+		"en": "analyze"
+	},
+	"htvi0m4": {
+		"zh-cn": "解析结果",
+		"ko": "분석 결과",
+		"ja": "解析結果です",
+		"en": "Analytic result"
+	},
+	"971b9a": {
+		"zh-cn": "解析结果会显示在这里",
+		"ko": "분석 결과가 여기에 나타날 것입니다",
+		"ja": "解析結果はこちらに表示されます。",
+		"en": "The parsing result will be displayed here"
+	},
+	"fiqivw5": {
+		"zh-cn": "解析结果：",
+		"ko": "분석 결과:",
+		"ja": "解析結果です。",
+		"en": "Analysis results:"
+	},
+	"wcc4owd": {
+		"zh-cn": "解析结果(点击图片下载)：",
+		"ko": "분석 결과 (사진 다운로드 클릭):",
+		"ja": "解析結果(画像をクリックしてダウンロードします):",
+		"en": "Parsing results (click image to download) :"
+	}
+}
