@@ -1,10 +1,10 @@
 import request from '@/utils/fetch'
 
 class AnalyzeService {
-  getRedBook(url: string) {
+  getXiaohongshu(url: string) {
     return request<API.Analyze.GetRedBookResult>({
       method: 'post',
-      url: '/getRedBook',
+      url: '/xiaohongshu/analyze',
       params: {
         url,
         format: 'json',

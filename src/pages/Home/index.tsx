@@ -1,21 +1,16 @@
+import { AppTypeEnum } from '@/enum/components/analyze'
 import analyzeService from '@/services/analyzeService'
-import { DownloadOutlined } from '@ant-design/icons'
 import { useRequest } from 'ahooks'
-import { Image as AntdImage, Button, Input, message } from 'antd'
-import download from 'downloadjs'
+import { Button, Input } from 'antd'
 import { useState } from 'react'
+import XHSComp from './components/XHSComp'
 
 function Home() {
   const [url, setUrl] = useState('')
 
-  const { run, loading, data } = useRequest(async () => await analyzeService.getRedBook(url), {
+  const { run, loading, data } = useRequest(async () => await analyzeService.getXiaohongshu(url), {
     manual: true,
   })
-
-  const onHandleDownload = (url: string) => {
-    download(url)
-    message.success('下载成功')
-  }
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-16">
@@ -37,32 +32,14 @@ function Home() {
         {data && (
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <div className="text-lg font-bold">{$t('解析结果(点击图片下载)：')}</div>
+              <div className="text-lg font-bold">{$t('解析结果：')}</div>
               <div className="text-sm text-gray-600">
                 {
                   data?.data?.description
                 }
               </div>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {
-                data?.data?.image_list.map((item, index) => {
-                  return (
-                    <div className="aspect-[1/1] h-fit rounded-md relative cursor-pointer group" key={index}>
-                      <AntdImage src={item} alt="" className="max-w-full max-h-full object-cover absolute top-0 left-0" rootClassName="size-full" preview={false} />
-                      <div
-                        onClick={() => {
-                          onHandleDownload(item)
-                        }}
-                        className="absolute top-0 left-0 w-full h-full justify-center items-center bg-black/50 text-white text-center hidden group-hover:flex"
-                      >
-                        <div className="text-2xl font-bold"><DownloadOutlined /></div>
-                      </div>
-                    </div>
-                  )
-                })
-              }
-            </div>
+            {data?.data.app_type === AppTypeEnum.XIAOHONGSHU && <XHSComp data={data} />}
           </div>
         )}
       </div>
