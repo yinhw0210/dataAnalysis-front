@@ -98,7 +98,7 @@ function XHSComp(props: IProps) {
                         onHandleDownload(item)
                       }}
                     >
-                      下载
+                      {$t('下载')}
                     </Button>
                   </div>
 

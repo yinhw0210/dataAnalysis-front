@@ -64,5 +64,11 @@
 		"ko": "분석 결과 (사진 다운로드 클릭):",
 		"ja": "解析結果(画像をクリックしてダウンロードします):",
 		"en": "Parsing results (click image to download) :"
+	},
+	"e28i2": {
+		"zh-cn": "下载",
+		"ko": "다운로드",
+		"ja": "ダウンロードします",
+		"en": "Download"
 	}
 }
