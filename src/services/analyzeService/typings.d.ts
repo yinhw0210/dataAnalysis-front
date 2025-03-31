@@ -17,6 +17,11 @@ export namespace AnalyzeType {
       live_list?: string[]
 
       /**
+       * 视频链接
+       */
+      video?: string
+
+      /**
        * 描述
        */
       description: string

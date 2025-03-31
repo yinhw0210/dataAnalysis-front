@@ -9,34 +9,51 @@ interface IProps {
 
 function XHSComp(props: IProps) {
   const { data } = props
-  const [xhsType, setXhsType] = useState<'image' | 'live'>('image')
+  const [xhsType, setXhsType] = useState<'image' | 'live' | 'video'>('image')
 
   const showLive = useMemo(() => {
     return Boolean(data?.data?.live_list && data?.data?.live_list?.length > 0)
   }, [data])
 
+  const showVideo = useMemo(() => {
+    return Boolean(data?.data?.video)
+  }, [data])
+
+  const options = useMemo(() => {
+    return [
+      {
+        label: '图片',
+        value: 'image',
+      },
+      ...(showVideo
+        ? [{
+            label: '视频',
+            value: 'video',
+          }]
+        : []),
+      ...(showLive
+        ? [{
+            label: 'live',
+            value: 'live',
+          }]
+        : []),
+    ]
+  }, [data, showVideo, showLive])
+
   const onHandleDownload = (url: string) => {
     download(url)
     message.success('下载成功')
   }
+
   return (
     <React.Fragment>
       <div className="flex flex-col gap-4">
-        {showLive && (
+        {(showLive || showVideo) && (
           <Segmented<string>
-            options={[
-              {
-                label: '图片',
-                value: 'image',
-              },
-              {
-                label: 'live',
-                value: 'live',
-              },
-            ]}
+            options={options}
             value={xhsType}
             onChange={(value) => {
-              setXhsType(value as 'image' | 'live')
+              setXhsType(value as 'image' | 'live' | 'video')
             }}
           />
         )}
@@ -105,6 +122,37 @@ function XHSComp(props: IProps) {
                 )
               })
             }
+          </div>
+        )}
+        {xhsType === 'video' && (
+          <div className="flex flex-col gap-2">
+            <video
+              className="w-full h-full video_box relative z-[1]"
+              webkit-playsinline="true"
+              x5-video-player-type="h5"
+              preload="metadata"
+              x-webkit-airplay="true"
+              x5-video-orientation="portraint"
+              x5-video-player-fullscreen="true"
+              controls
+              controlsList="nodownload"
+              crossOrigin="anonymous"
+              src={data?.data?.video}
+            >
+              {' '}
+              您的浏览器不支持 HTML5 video 标签
+              {' '}
+            </video>
+            <Button
+              type="primary"
+              onClick={() => {
+                if (data?.data?.video) {
+                  onHandleDownload(data?.data?.video)
+                }
+              }}
+            >
+              {$t('下载')}
+            </Button>
           </div>
         )}
       </div>
