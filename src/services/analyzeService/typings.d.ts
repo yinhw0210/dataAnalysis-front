@@ -4,7 +4,7 @@ export namespace AnalyzeType {
   export interface GetRedBookParams {
     url: string
   }
-  export interface GetRedBookResult {
+  export interface AnalyzeResult {
     data: {
       /**
        * 图片列表

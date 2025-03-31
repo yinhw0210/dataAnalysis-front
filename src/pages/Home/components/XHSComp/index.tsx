@@ -1,16 +1,21 @@
 import { DownloadOutlined } from '@ant-design/icons'
 import { Button, message, Segmented } from 'antd'
 import download from 'downloadjs'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
+import Player, { Events } from 'xgplayer'
+import 'xgplayer/dist/index.min.css'
 
 interface IProps {
-  data: API.Analyze.GetRedBookResult
+  data: API.Analyze.AnalyzeResult
 }
 
 function XHSComp(props: IProps) {
   const { data } = props
   const [xhsType, setXhsType] = useState<'image' | 'live' | 'video'>('image')
 
+  const showImage = useMemo(() => {
+    return Boolean(data?.data?.image_list && data?.data?.image_list?.length > 0)
+  }, [data])
   const showLive = useMemo(() => {
     return Boolean(data?.data?.live_list && data?.data?.live_list?.length > 0)
   }, [data])
@@ -21,10 +26,12 @@ function XHSComp(props: IProps) {
 
   const options = useMemo(() => {
     return [
-      {
-        label: '图片',
-        value: 'image',
-      },
+      ...(showImage
+        ? [{
+            label: '图片',
+            value: 'image',
+          }]
+        : []),
       ...(showVideo
         ? [{
             label: '视频',
@@ -45,10 +52,30 @@ function XHSComp(props: IProps) {
     message.success('下载成功')
   }
 
+  useEffect(() => {
+    if (showVideo) {
+      const player = new Player({
+        id: 'player',
+        url: data?.data?.video,
+        poster: data?.data?.image_list?.[0],
+        width: '100%',
+        height: '100%',
+        autoplay: true,
+        controls: true,
+        muted: true,
+        loop: true,
+        volume: 0,
+      })
+      player.on(Events.PLAY, () => {
+        console.log('play')
+      })
+    }
+  }, [showVideo])
+
   return (
     <React.Fragment>
       <div className="flex flex-col gap-4">
-        {(showLive || showVideo) && (
+        {(showLive || showVideo) && showImage && (
           <Segmented<string>
             options={options}
             value={xhsType}
@@ -91,23 +118,7 @@ function XHSComp(props: IProps) {
                       className="aspect-[1/1] rounded-md relative"
                       key={index}
                     >
-                      <video
-                        className="w-full h-full video_box relative z-[1]"
-                        webkit-playsinline="true"
-                        x5-video-player-type="h5"
-                        preload="metadata"
-                        x-webkit-airplay="true"
-                        x5-video-orientation="portraint"
-                        x5-video-player-fullscreen="true"
-                        controls
-                        controlsList="nodownload"
-                        crossOrigin="anonymous"
-                        src={item}
-                      >
-                        {' '}
-                        您的浏览器不支持 HTML5 video 标签
-                        {' '}
-                      </video>
+                      <div id="player" className="!h-[400px]"></div>
                     </div>
                     <Button
                       type="primary"
@@ -124,25 +135,9 @@ function XHSComp(props: IProps) {
             }
           </div>
         )}
-        {xhsType === 'video' && (
+        {(xhsType === 'video' || showVideo) && (
           <div className="flex flex-col gap-2">
-            <video
-              className="w-full h-full video_box relative z-[1]"
-              webkit-playsinline="true"
-              x5-video-player-type="h5"
-              preload="metadata"
-              x-webkit-airplay="true"
-              x5-video-orientation="portraint"
-              x5-video-player-fullscreen="true"
-              controls
-              controlsList="nodownload"
-              crossOrigin="anonymous"
-              src={data?.data?.video}
-            >
-              {' '}
-              您的浏览器不支持 HTML5 video 标签
-              {' '}
-            </video>
+            <div id="player" className="!h-[400px]"></div>
             <Button
               type="primary"
               onClick={() => {

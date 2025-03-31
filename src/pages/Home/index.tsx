@@ -8,7 +8,7 @@ import XHSComp from './components/XHSComp'
 function Home() {
   const [url, setUrl] = useState('')
 
-  const { run, loading, data } = useRequest(async () => await analyzeService.getXiaohongshu(url), {
+  const { run, loading, data } = useRequest(async () => await analyzeService.getAnalyzeResult(url), {
     manual: true,
   })
 
@@ -32,14 +32,14 @@ function Home() {
         {data && (
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <div className="text-lg font-bold">{$t('解析结果：')}</div>
+              <div className="text-lg font-bold text-[#333]">{$t('解析结果：')}</div>
               <div className="text-sm text-gray-600">
                 {
                   data?.data?.description
                 }
               </div>
             </div>
-            {data?.data.app_type === AppTypeEnum.XIAOHONGSHU && <XHSComp data={data} />}
+            {data?.data?.app_type === AppTypeEnum.XIAOHONGSHU && <XHSComp data={data} />}
           </div>
         )}
       </div>
