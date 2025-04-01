@@ -1,9 +1,12 @@
+import XGPlayer from '@/components/XGPlayer'
+import XGPlayerDemo from '@/components/XGPlayerDemo'
 import { AppTypeEnum } from '@/enum/components/analyze'
 import analyzeService from '@/services/analyzeService'
 import { useRequest } from 'ahooks'
 import { Button, Input } from 'antd'
 import { useState } from 'react'
 import XHSComp from './components/XHSComp'
+import 'xgplayer/dist/index.min.css'
 
 function Home() {
   const [url, setUrl] = useState('')
