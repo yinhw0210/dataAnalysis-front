@@ -70,5 +70,17 @@
 		"ko": "다운로드",
 		"ja": "ダウンロードします",
 		"en": "Download"
+	},
+	"76f4a7e": {
+		"zh-cn": "无水印下载多个平台视频和图片",
+		"ko": "멀티 플랫폼 비디오 및 사진 다운로드 가능",
+		"ja": "復数のプラットフォームをダウンロードする透かしがありませんビデオと画像",
+		"en": "Download videos and images for multiple platforms without watermarking"
+	},
+	"xg4hhn5": {
+		"zh-cn": "问题反馈：",
+		"ko": "질문 피드백:",
+		"ja": "質問のフィードバックです。",
+		"en": "Feedback on questions:"
 	}
 }

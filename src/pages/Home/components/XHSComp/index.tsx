@@ -13,15 +13,15 @@ function XHSComp(props: IProps) {
     const [xhsType, setXhsType] = useState<'image' | 'live' | 'video'>('image')
 
     const showImage = useMemo(() => {
-        return Boolean(data?.data?.image_list && data?.data?.image_list?.length > 0)
+        return Boolean(data?.image_list && data?.image_list?.length > 0)
     }, [data])
 
     const showLive = useMemo(() => {
-        return Boolean(data?.data?.live_list && data?.data?.live_list?.length > 0)
+        return Boolean(data?.live_list && data?.live_list?.length > 0)
     }, [data])
 
     const showVideo = useMemo(() => {
-        return Boolean(data?.data?.video)
+        return Boolean(data?.video)
     }, [data])
 
     const options = useMemo(() => {
@@ -67,7 +67,7 @@ function XHSComp(props: IProps) {
                 {xhsType === 'image' && (
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                         {
-                            data?.data?.image_list?.map((item, index) => {
+                            data?.image_list?.map((item, index) => {
                                 return (
                                     <div
                                         className="aspect-[1/1] rounded-md relative cursor-pointer group"
@@ -91,15 +91,16 @@ function XHSComp(props: IProps) {
                 {xhsType === 'live' && (
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                         {
-                            data?.data?.live_list?.map((item, index) => {
+                            data?.live_list?.map((item, index) => {
                                 return (
-                                    <div className="flex flex-col gap-2">
+                                    <div className="flex flex-col gap-2" key={index}>
                                         <div
                                             className="aspect-[1/1] rounded-md relative"
-                                            key={index}
                                         >
-                                            <XGPlayer src={data?.data?.video || ''} options={{
-                                                poster: data?.data?.image_list?.[0] || '',
+                                            <XGPlayer src={item || ''} options={{
+                                                poster: data?.image_list?.[0] || '',
+                                                autoplay: true,
+                                                controls:false
                                             }} />
                                         </div>
                                         <Button
@@ -119,14 +120,14 @@ function XHSComp(props: IProps) {
                 )}
                 {(xhsType === 'video' || (!showImage && showVideo)) && (
                     <div className="flex flex-col gap-2">
-                        <XGPlayer src={data?.data?.video || ''} options={{
-                            poster: data?.data?.image_list?.[0] || '',
+                        <XGPlayer src={data?.video || ''} options={{
+                            poster: data?.image_list?.[0] || '',
                         }} />
                         <Button
                             type="primary"
                             onClick={() => {
-                                if (data?.data?.video) {
-                                    onHandleDownload(data?.data?.video)
+                                if (data?.video) {
+                                    onHandleDownload(data?.video)
                                 }
                             }}
                         >

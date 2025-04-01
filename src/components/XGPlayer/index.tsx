@@ -26,6 +26,7 @@ const XgPlayer: React.FunctionComponent<XgPlayerProps> = ({
       autoplay: false,
       el: domRef.current as HTMLElement,
       lang: 'zh-cn',
+      ...options
     })
     return () => {
       player.current?.destroy()
@@ -33,7 +34,7 @@ const XgPlayer: React.FunctionComponent<XgPlayerProps> = ({
   }, [optionsRef, src])
 
   return (
-    <div ref={domRef} {...props}></div>
+    <div ref={domRef} className='!h-full' {...props}></div>
   )
 }
 
