@@ -1,3 +1,4 @@
+import { GithubFilled } from '@ant-design/icons'
 import { Badge, Button, Dropdown } from 'antd'
 import { useCallback, useMemo, useState } from 'react'
 
@@ -82,15 +83,16 @@ function Header() {
       <nav className="max-w-[1200px] mx-auto px-4 sm:px-6 h-16">
         <div className="h-full flex justify-between items-center">
           <div className="text-lg sm:text-xl font-bold text-gray-800">
-            <Badge count="beta" color="red" offset={[-80, 0]}>
-              <span className="text-lg sm:text-xl font-bold text-gray-800">Solivix</span>
-            </Badge>
+            {/* <Badge count="beta" color="red" offset={[-80, 0]}> */}
+            <span className="text-lg sm:text-xl font-bold text-gray-800">Solivix</span>
+            {/* </Badge> */}
             <span className="text-[12px] text-gray-500 ml-[8px]">相信成长的力量</span>
           </div>
           <div className="flex items-center gap-4">
 
           </div>
           <div className="flex gap-4 items-center">
+            <a href="https://github.com/yinhw0210" target="_blank" rel="noreferrer"><GithubFilled className="text-xl" /></a>
             <Dropdown menu={{ items }} placement="bottom" trigger={['hover']}>
               <Button>{buttonText}</Button>
             </Dropdown>

@@ -82,5 +82,101 @@
 		"ko": "질문 피드백:",
 		"ja": "質問のフィードバックです。",
 		"en": "Feedback on questions:"
+	},
+	"638wfx7": {
+		"zh-cn": "为什么选择我们",
+		"ko": "왜 우리를 선택해서",
+		"ja": "なぜ私たちを選んだのですか",
+		"en": "Why choose us"
+	},
+	"cp2p064": {
+		"zh-cn": "快速处理",
+		"ko": "스피드 처리",
+		"ja": "迅速に処理します",
+		"en": "Rapid processing"
+	},
+	"hch7obf": {
+		"zh-cn": "先进的算法确保快速处理您的视频",
+		"ko": "고급 알고리즘은 동영상을 빠르게 처리할 수 있도록 보장합니다",
+		"ja": "高度なアルゴリズムがビデオの迅速な処理を保証します",
+		"en": "Advanced algorithms ensure fast processing of your videos"
+	},
+	"x8yom37": {
+		"zh-cn": "视频图片都支持",
+		"ko": "동영상 이미지 모두 지원",
+		"ja": "ビデオも画像も対応しています",
+		"en": "Videos and pictures are supported"
+	},
+	"n68kbgd": {
+		"zh-cn": "支持视频去水印，图片去水印",
+		"ko": "동영상 워터마크 제거, 그림 워터마크 제거 지원",
+		"ja": "ビデオの透かし取り、画像の透かし取りをサポートします。",
+		"en": "Support video watermark, image watermark"
+	},
+	"au8fth4": {
+		"zh-cn": "免费使用",
+		"ko": "무료 사용",
+		"ja": "無料で利用できます",
+		"en": "Free use"
+	},
+	"lm15va7": {
+		"zh-cn": "不收取任何费用",
+		"ko": "아무런 비용도 받지 않다",
+		"ja": "料金は一切頂戴しません",
+		"en": "There is no charge"
+	},
+	"oml05c7": {
+		"zh-cn": "相信成长的力量",
+		"ko": "성장의 힘을 믿다",
+		"ja": "成長する力を信じています",
+		"en": "Believe in the power of growth"
+	},
+	"gpgxuq4": {
+		"zh-cn": "联系我们",
+		"ko": "연락하기",
+		"ja": "連絡してきます",
+		"en": "Contact us"
+	},
+	"padf2": {
+		"zh-cn": "邮箱",
+		"ko": "메일 박스",
+		"ja": "メールボックスです",
+		"en": "mailbox"
+	},
+	"fb4g2": {
+		"zh-cn": "地址",
+		"ko": "주소",
+		"ja": "アドレスです",
+		"en": "address"
+	},
+	"gkrkg24": {
+		"zh-cn": "网站说明",
+		"ko": "사이트 설명",
+		"ja": "ウェブサイトの説明です",
+		"en": "Website description"
+	},
+	"i3eyhs13": {
+		"zh-cn": "此项目为个人项目，旨在提供一个免费的在线工具网站，方便用户在线处理图片和视频。",
+		"ko": "이 프로젝트는 개인이 사진과 동영상을 온라인으로 쉽게 처리할 수 있는 무료 온라인 도구 사이트를 제공하는 것을 목표로 한다.",
+		"ja": "このプロジェクトは箇人プロジェクトで、ユーザーがオンラインで画像や動画を処理できる無料のオンラインツールサイトを提供することを目的としています。",
+		"en": "This is a personal project that aims to provide a free online tool site for users to work with pictures and videos online."
+	},
+	"nmrqbdp": {
+		"zh-cn": "本项目已完全开源，遵循 MIT 开源协议。您可以在",
+		"ko": "이 프로젝트는 mit 오픈 소스 프로토콜에 따라 완전히 오픈소스로 되어 있다.다음 화면에서",
+		"ja": "このプロジェクトは完全にオープンソース化されており、MITのオープンソースプロトコルに準拠しています。いてもよろしいです",
+		"en": "The project is fully open source and follows the MIT Open Source protocol. You can find"
+	},
+	"o18qikx": {
+		"zh-cn": "仓库链接 查看完整代码，自由使用、修改和分发。欢迎社区参与和贡献！",
+		"ko": "저장소 링크는 전체 코드를 보고, 자유롭게 사용, 수정 및 배포할 수 있습니다.지역사회의 참여와 공헌을 환영합니다!",
+		"ja": "リポジトリリンクは完全なコードを見ることができ、自由に使用、修正、配布できます。コミュニティの参加と貢献を歓迎します!",
+		"en": "Warehouse Link View full code, freely use, modify and distribute. Community participation and contributions are welcome!"
+	},
+	"cgpx9v4": {
+		"zh-cn": "常见问题",
+		"ko": "늘 보는 질문",
+		"ja": "よくある質問です",
+		"en": "Q&A"
 	}
 }

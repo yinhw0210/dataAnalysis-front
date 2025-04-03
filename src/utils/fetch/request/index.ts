@@ -95,6 +95,9 @@ class Request {
         if (code === '0000' || code === 200 || code === 1) {
           return Promise.resolve(response.data)
         }
+        if (res.config.responseType === 'blob') {
+          return Promise.resolve(response)
+        }
         return Promise.reject(response)
       },
       (err: unknown) => {

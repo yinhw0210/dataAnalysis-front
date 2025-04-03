@@ -1,8 +1,12 @@
 import XGPlayer from '@/components/XGPlayer'
 import { DownloadOutlined } from '@ant-design/icons'
 import { Button, message, Segmented } from 'antd'
-import download from 'downloadjs'
 import React, { useMemo, useState } from 'react'
+// import { saveAs } from 'file-saver'
+import { downloadFile } from '@/utils'
+import { AppTypeEnum } from '@/enum/components/analyze'
+import analyzeService from '@/services/analyzeService'
+import saveAs from 'file-saver'
 
 interface IProps {
     data: API.Analyze.AnalyzeResult
@@ -10,6 +14,7 @@ interface IProps {
 
 function XHSComp(props: IProps) {
     const { data } = props
+    const [loading, setLoading] = useState(false)
     const [xhsType, setXhsType] = useState<'image' | 'live' | 'video'>('image')
 
     const showImage = useMemo(() => {
@@ -47,9 +52,19 @@ function XHSComp(props: IProps) {
         ]
     }, [data, showVideo, showLive])
 
-    const onHandleDownload = (url: string) => {
-        download(url)
-        message.success('下载成功')
+    const onHandleDownload = async (url: string, isVideo = false) => {
+        setLoading(true)
+        if (data.app_type === AppTypeEnum.DOUYIN) {
+            const res = await analyzeService.getFileStream(url)
+            saveAs(res, 'douyin.mp4')
+            setLoading(false)
+            return
+        }
+        if (isVideo) {
+            message.info('若视频过大，请耐心等待，或可使用浏览器内置的长按保存功能。')
+        }
+        downloadFile(url)
+        setLoading(false)
     }
 
     return (
@@ -100,7 +115,7 @@ function XHSComp(props: IProps) {
                                             <XGPlayer src={item || ''} options={{
                                                 poster: data?.image_list?.[0] || '',
                                                 autoplay: true,
-                                                controls:false
+                                                controls: false
                                             }} />
                                         </div>
                                         <Button
@@ -125,9 +140,10 @@ function XHSComp(props: IProps) {
                         }} />
                         <Button
                             type="primary"
+                            loading={loading}
                             onClick={() => {
                                 if (data?.video) {
-                                    onHandleDownload(data?.video)
+                                    onHandleDownload(data?.video, true)
                                 }
                             }}
                         >

@@ -21,6 +21,10 @@ const routes = createBrowserRouter([
         Component: lazy(() => import('@/pages/Home')),
       },
       {
+        path: '/test',
+        Component: lazy(() => import('@/pages/Test')),
+      },
+      {
         path: '/user',
         Component: lazy(() => import('@/pages/User')),
         children: [
