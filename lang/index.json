@@ -178,5 +178,95 @@
 		"ko": "늘 보는 질문",
 		"ja": "よくある質問です",
 		"en": "Q&A"
+	},
+	"5bnxa1b": {
+		"zh-cn": "为什么链接解析不成功？",
+		"ko": "링크 분석에 실패했습니다?",
+		"ja": "なぜリンク解析がうまくいかないのですか?",
+		"en": "Why did link resolution fail?"
+	},
+	"5zr8o9f": {
+		"zh-cn": "此视频已被隐藏或下架、无法解析",
+		"ko": "이 비디오는 숨겨졌거나 삭제되어 분석할 수 없습니다",
+		"ja": "この映像は隠蔽または削除され解析不能となっています",
+		"en": "This video has been hidden or removed and cannot be parsed"
+	},
+	"258cfmf": {
+		"zh-cn": "链接必须是新的，不然解析会失败",
+		"ko": "링크는 새 것이어야 합니다. 그렇지 않으면 분석에 실패합니다",
+		"ja": "新しいリンクでなければ解析に失敗します",
+		"en": "The link must be new, otherwise parsing will fail"
+	},
+	"142kp9o": {
+		"zh-cn": "目前仅支持三个主流视频平台，其他平台正在开发中。",
+		"ko": "현재 3개의 주요 비디오 플랫폼만 지원되며, 나머지는 개발 중이다.",
+		"ja": "現在、3つの主要な動画プラットフォームに対応しており、他のプラットフォームは開発中です。",
+		"en": "Currently only three major video platforms are supported, with others in development."
+	},
+	"76gvvc16": {
+		"zh-cn": "由于快手的网站有重定向，如果解析失败，请重试几次，如果还是不行，请反馈给我们，谢谢！",
+		"ko": "빠른손에의해사이트의방향성이있기 때문에, 해석에실패하면, 여러번다시시도해주시고, 만약여전히안되면, 저희에게피드백해주세요, 감사합니다!",
+		"ja": "快手のウェブサイトはリダイレクトがありますので、解析に失敗したら、何回かやり直してみてください。それでもだめなら、フィードバックしてください。ありがとうございます。",
+		"en": "Because the website of Kuaishou has redirection, if the parsing fails, please try again several times, if it still does not work, please feedback to us, thank you!"
+	},
+	"r4jzxzb": {
+		"zh-cn": "文件下载失败是为什么？",
+		"ko": "왜 다운로드가 실패했습니까?",
+		"ja": "ファイルのダウンロードが失敗したのはなぜですか?",
+		"en": "Why did file download fail?"
+	},
+	"u08bheg": {
+		"zh-cn": "文件下载失败，请检查链接是否有效",
+		"ko": "파일 다운로드에 실패했습니다. 링크가 올바른지 확인하십시오",
+		"ja": "ファイルのダウンロードに失敗しました。",
+		"en": "File download failed, please check the link is valid"
+	},
+	"wwiza9u": {
+		"zh-cn": "由于微信内置浏览器的限制，无法下载文件，请使用其他浏览器下载",
+		"ko": "위챗에 내장된 브라우저의 제한으로 인해 파일을 다운로드할 수 없습니다. 다른 브라우저를 이용해서 다운로드하시기 바랍니다",
+		"ja": "wechatに内蔵されているブラウザの制限により、ファイルをダウンロードすることができません。",
+		"en": "Due to the limitation of wechat built-in browser, the file cannot be downloaded, please use another browser to download"
+	},
+	"7nyhgnw": {
+		"zh-cn": "外置浏览器如果还是下载失败，请尝试使用浏览器内置的长按保存功能。",
+		"ko": "외장 브라우저가 그래도 다운로드에 실패하면 브라우저에 내장된 긴 버튼 저장 기능을 사용해 보십시오.",
+		"ja": "外付けブラウザでもダウンロードに失敗した場合は、ブラウザに内蔵されている長押保存機能を使ってみてはいかがでしょうか。",
+		"en": "If the external browser still fails to download, try using the browser's built-in long-press save function."
+	},
+	"h2mk4a8": {
+		"zh-cn": "有没有小程序版本",
+		"ko": "애플릿 버전이 있습니까",
+		"ja": "ウィジェット版はありますか",
+		"en": "There is no small program version"
+	},
+	"lpm9xxf": {
+		"zh-cn": "目前没有小程序版本，敬请期待。",
+		"ko": "현재 애플릿 버전은 없으니, 많이 기대해주세요.",
+		"ja": "現在ウィジェット版はありませんが、お楽しみに。",
+		"en": "There is currently no mini program version, so stay tuned."
+	},
+	"d8rn3b4": {
+		"zh-cn": "是否开源",
+		"ko": "오픈 소스인지,",
+		"ja": "オープンソースですか",
+		"en": "Open source or not"
+	},
+	"m70k0ys": {
+		"zh-cn": "是的，本项目已完全开源，遵循 MIT 开源协议。您可以在",
+		"ko": "예,이 프로젝트는 mit 오픈 소스 규약에 따라 완전히 오픈소스로 되어 있습니다.다음 화면에서",
+		"ja": "このプロジェクトはMITのオープンソース・プロトコルに準拠していますいてもよろしいです",
+		"en": "Yes, the project is fully open source and follows the MIT Open Source protocol. You can find"
+	},
+	"317g566": {
+		"zh-cn": "查看源代码。",
+		"ko": "소스코드를보다.",
+		"ja": "ソースコードを調べます。",
+		"en": "View the source code."
+	},
+	"b66vv91u": {
+		"zh-cn": "前端采用 React + TypeScript + TailwindCSS 开发，后端采用 Python + FastAPI 开发。",
+		"ko": "프론트엔드는 react + typescript + tailwindcss로 개발되었고, 백엔드는 python + fastapi로 개발되었다.",
+		"ja": "フロントエンドはReact + TypeScript + TailwindCSS,バックエンドはPython + FastAPIで開発されています。",
+		"en": "The front-end is developed using React + TypeScript + TailwindCSS, and the back-end is developed using Python + FastAPI."
 	}
 }

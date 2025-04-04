@@ -1,7 +1,7 @@
 import analyzeService from '@/services/analyzeService'
 import { useRequest } from 'ahooks'
 import { Button, Collapse, ConfigProvider, Input } from 'antd'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import XHSComp from './components/XHSComp'
 
 function Home() {
@@ -11,58 +11,58 @@ function Home() {
     manual: true,
   })
 
-  const items = [
+  const items = useMemo(() => [
     {
       key: '1',
-      label: '为什么链接解析不成功？',
+      label: $t('为什么链接解析不成功？'),
       children: (
         <div>
-          <p>1、此视频已被隐藏或下架、无法解析</p>
-          <p>2、链接必须是新的，不然解析会失败</p>
-          <p>3、目前仅支持三个主流视频平台，其他平台正在开发中。</p>
-          <p>4、由于快手的网站有重定向，如果解析失败，请重试几次，如果还是不行，请反馈给我们，谢谢！</p>
+          <p>1、{$t('此视频已被隐藏或下架、无法解析')}</p>
+          <p>2、{$t('链接必须是新的，不然解析会失败')}</p>
+          <p>3、{$t('目前仅支持三个主流视频平台，其他平台正在开发中。')}</p>
+          <p>4、{$t('由于快手的网站有重定向，如果解析失败，请重试几次，如果还是不行，请反馈给我们，谢谢！')}</p>
         </div>
       ),
     },
     {
       key: '2',
-      label: '文件下载失败是为什么？',
+      label: $t('文件下载失败是为什么？'),
       children: (
         <div>
-          <p>1、文件下载失败，请检查链接是否有效</p>
-          <p>2、由于微信内置浏览器的限制，无法下载文件，请使用其他浏览器下载</p>
-          <p>3、外置浏览器如果还是下载失败，请尝试使用浏览器内置的长按保存功能。</p>
+          <p>1、{$t('文件下载失败，请检查链接是否有效')}</p>
+          <p>2、{$t('由于微信内置浏览器的限制，无法下载文件，请使用其他浏览器下载')}</p>
+          <p>3、{$t('外置浏览器如果还是下载失败，请尝试使用浏览器内置的长按保存功能。')}</p>
         </div>
       ),
     },
     {
       key: '3',
-      label: '有没有小程序版本',
+      label: $t('有没有小程序版本'),
       children: (
         <div>
-          目前没有小程序版本，敬请期待。
+          {$t('目前没有小程序版本，敬请期待。')}
         </div>
       ),
     },
     {
       key: '4',
-      label: '是否开源',
+      label: $t('是否开源'),
       children: (
         <div>
           <p>
             1、
             {' '}
-            是的，本项目已完全开源，遵循 MIT 开源协议。您可以在
+            {$t('是的，本项目已完全开源，遵循 MIT 开源协议。您可以在')}
             {' '}
             <a href="https://github.com/yinhw0210" className="text-blue-500" target="_blank" rel="noreferrer">GitHub</a>
             {' '}
-            查看源代码。
+            {$t('查看源代码。')}
           </p>
-          <p>2、前端采用 React + TypeScript + TailwindCSS 开发，后端采用 Python + FastAPI 开发。</p>
+          <p>2、{$t('前端采用 React + TypeScript + TailwindCSS 开发，后端采用 Python + FastAPI 开发。')}</p>
         </div>
       ),
     },
-  ]
+  ], [url])
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-16">
