@@ -1,8 +1,8 @@
 import analyzeService from '@/services/analyzeService'
 import { useRequest } from 'ahooks'
-import { Button, Collapse, ConfigProvider, Input } from 'antd'
+import { Button, Collapse, ConfigProvider, Input, message } from 'antd'
 import { useMemo, useState } from 'react'
-import XHSComp from './components/XHSComp'
+import RenderResult from './components/RenderResult'
 
 function Home() {
   const [url, setUrl] = useState('')
@@ -17,10 +17,22 @@ function Home() {
       label: $t('为什么链接解析不成功？'),
       children: (
         <div>
-          <p>1、{$t('此视频已被隐藏或下架、无法解析')}</p>
-          <p>2、{$t('链接必须是新的，不然解析会失败')}</p>
-          <p>3、{$t('目前仅支持三个主流视频平台，其他平台正在开发中。')}</p>
-          <p>4、{$t('由于快手的网站有重定向，如果解析失败，请重试几次，如果还是不行，请反馈给我们，谢谢！')}</p>
+          <p>
+            1、
+            {$t('此视频已被隐藏或下架、无法解析')}
+          </p>
+          <p>
+            2、
+            {$t('链接必须是新的，不然解析会失败')}
+          </p>
+          <p>
+            3、
+            {$t('目前仅支持三个主流视频平台，其他平台正在开发中。')}
+          </p>
+          <p>
+            4、
+            {$t('由于快手的网站有重定向，如果解析失败，请重试几次，如果还是不行，请反馈给我们，谢谢！')}
+          </p>
         </div>
       ),
     },
@@ -29,9 +41,18 @@ function Home() {
       label: $t('文件下载失败是为什么？'),
       children: (
         <div>
-          <p>1、{$t('文件下载失败，请检查链接是否有效')}</p>
-          <p>2、{$t('由于微信内置浏览器的限制，无法下载文件，请使用其他浏览器下载')}</p>
-          <p>3、{$t('外置浏览器如果还是下载失败，请尝试使用浏览器内置的长按保存功能。')}</p>
+          <p>
+            1、
+            {$t('文件下载失败，请检查链接是否有效')}
+          </p>
+          <p>
+            2、
+            {$t('由于微信内置浏览器的限制，无法下载文件，请使用其他浏览器下载')}
+          </p>
+          <p>
+            3、
+            {$t('外置浏览器如果还是下载失败，请尝试使用浏览器内置的长按保存功能。')}
+          </p>
         </div>
       ),
     },
@@ -58,11 +79,23 @@ function Home() {
             {' '}
             {$t('查看源代码。')}
           </p>
-          <p>2、{$t('前端采用 React + TypeScript + TailwindCSS 开发，后端采用 Python + FastAPI 开发。')}</p>
+          <p>
+            2、
+            {$t('前端采用 React + TypeScript + TailwindCSS 开发，后端采用 Python + FastAPI 开发。')}
+          </p>
         </div>
       ),
     },
   ], [url])
+
+  const onHandleAnalyze = () => {
+    if (url.includes('weibo')) {
+      message.info($t('微博链接解析较慢，请耐心等待。'))
+    }
+    if (url) {
+      run()
+    }
+  }
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-16">
@@ -84,7 +117,7 @@ function Home() {
             setUrl(e.target.value)
           }}
         />
-        <Button type="primary" size="large" className="h-[50px]" loading={loading} onClick={run}>{$t('解析')}</Button>
+        <Button type="primary" size="large" className="h-[50px]" loading={loading} onClick={onHandleAnalyze}>{$t('解析')}</Button>
         {data && (
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
@@ -95,7 +128,7 @@ function Home() {
                 }
               </div>
             </div>
-            <XHSComp data={data} />
+            {data && <RenderResult data={data} />}
           </div>
         )}
       </div>

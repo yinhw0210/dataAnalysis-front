@@ -268,5 +268,11 @@
 		"ko": "프론트엔드는 react + typescript + tailwindcss로 개발되었고, 백엔드는 python + fastapi로 개발되었다.",
 		"ja": "フロントエンドはReact + TypeScript + TailwindCSS,バックエンドはPython + FastAPIで開発されています。",
 		"en": "The front-end is developed using React + TypeScript + TailwindCSS, and the back-end is developed using Python + FastAPI."
+	},
+	"lspo7df": {
+		"zh-cn": "微博链接解析较慢，请耐心等待。",
+		"ko": "웨이보 링크 설명이 느리니 기다려 주세요.",
+		"ja": "微博リンクの解析が遅くなりますので、辛抱強くお待ちください。",
+		"en": "Weibo link parsing is slow, please wait patiently."
 	}
 }
