@@ -1,4 +1,6 @@
+import { TrackTypeEnum } from '@/enum/components/track'
 import analyzeService from '@/services/analyzeService'
+import { onTracking } from '@/utils'
 import { useRequest } from 'ahooks'
 import { Button, Collapse, ConfigProvider, Input, message } from 'antd'
 import { useMemo, useState } from 'react'
@@ -94,6 +96,12 @@ function Home() {
     }
     if (url) {
       run()
+      onTracking({
+        event_type: TrackTypeEnum.PARSE,
+        event_params: {
+          url,
+        },
+      })
     }
   }
 

@@ -1,7 +1,17 @@
 import { AppTypeEnum } from '@/enum/components/analyze'
+import { SourcePlatformEnum } from '@/enum/components/track'
+import userService from '@/services/userService'
 
 export function demo() {
   return 'demo'
+}
+
+export async function onTracking(data: Omit<API.User.Tracking, 'source_platform' | 'user_id'>) {
+  await userService.tracking({
+    ...data,
+    user_id: 1,
+    source_platform: SourcePlatformEnum.PC,
+  })
 }
 
 export function downloadFile(fileUrl: string, name?: string) {
