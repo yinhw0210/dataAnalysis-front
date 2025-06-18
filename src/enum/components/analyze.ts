@@ -7,7 +7,7 @@ export enum AppTypeEnum {
   /**
    * 抖音
    */
-  DOUYIN = 'tiktok',
+  DOUYIN = 'douyin',
 
   /**
    * 快手

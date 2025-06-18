@@ -6,6 +6,8 @@ import { Button, Collapse, ConfigProvider, Input, message } from 'antd'
 import { useMemo, useState } from 'react'
 import RenderResult from './components/RenderResult'
 
+const ENV = import.meta.env
+
 function Home() {
   const [url, setUrl] = useState('')
 
@@ -94,14 +96,19 @@ function Home() {
     if (url.includes('weibo')) {
       message.info($t('微博链接解析较慢，请耐心等待。'))
     }
-    if (url) {
+    if (ENV.VITE_ENV === 'production') {
+      Promise.all([
+        onTracking({
+          event_type: TrackTypeEnum.PARSE,
+          event_params: {
+            url,
+          },
+        }),
+        run(),
+      ])
+    }
+    else {
       run()
-      onTracking({
-        event_type: TrackTypeEnum.PARSE,
-        event_params: {
-          url,
-        },
-      })
     }
   }
 
@@ -130,11 +137,12 @@ function Home() {
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
               <div className="text-lg font-bold text-[#333]">{$t('解析结果：')}</div>
-              <div className="text-sm text-gray-600">
-                {
-                  data?.description
-                }
-              </div>
+              <div
+                className="text-sm text-gray-600"
+                dangerouslySetInnerHTML={{
+                  __html: data?.description,
+                }}
+              />
             </div>
             {data && <RenderResult data={data} />}
           </div>

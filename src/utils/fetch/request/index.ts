@@ -89,7 +89,7 @@ class Request {
             msg: '登录失效，请重新登录',
           })
         }
-        let response = res.data
+        const response = res.data
         console.log(`%c ${res.config.name} 结果 `, 'color:#FF0099;', response)
         const { code } = response
         if (code === '0000' || code === 200 || code === 1) {
@@ -97,6 +97,9 @@ class Request {
         }
         if (res.config.responseType === 'blob') {
           return Promise.resolve(response)
+        }
+        if (code !== 200) {
+          message.warning(response.message)
         }
         return Promise.reject(response)
       },

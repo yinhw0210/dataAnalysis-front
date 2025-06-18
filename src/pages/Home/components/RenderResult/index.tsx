@@ -31,7 +31,12 @@ function RenderResult(props: IProps) {
       return
     }
     if (data.app_type === AppTypeEnum.WEIBO) {
-      downloadFile(get_weibo_url(url, data.app_type), '未命名.jpg')
+      if (isVideo) {
+        downloadFile(get_weibo_url(url, data.app_type), '未命名.mp4')
+      }
+      else {
+        downloadFile(get_weibo_url(url, data.app_type), '未命名.jpg')
+      }
       setLoading(false)
       return
     }
@@ -129,7 +134,6 @@ function RenderResult(props: IProps) {
                         <XGPlayer
                           src={item || ''}
                           options={{
-                            poster: data?.image_list?.[0] || '',
                             autoplay: true,
                             controls: false,
                           }}
