@@ -274,5 +274,119 @@
 		"ko": "웨이보 링크 설명이 느리니 기다려 주세요.",
 		"ja": "微博リンクの解析が遅くなりますので、辛抱強くお待ちください。",
 		"en": "Weibo link parsing is slow, please wait patiently."
+	},
+	"qylb2": {
+		"zh-cn": "首页",
+		"ko": "첫 페이지",
+		"ja": "トップページです",
+		"en": "Home Page"
+	},
+	"ovqzcg9": {
+		"zh-cn": "YouTube解析",
+		"ko": "유튜브 해독",
+		"ja": "YouTube解析です",
+		"en": "\"YouTube Analysis"
+	},
+	"dc0cwq4": {
+		"zh-cn": "最佳质量",
+		"ko": "최고 품질",
+		"ja": "最適な品質です",
+		"en": "Best quality"
+	},
+	"t784bnj": {
+		"zh-cn": "此视频可能无法访问、已被删除或设为私有",
+		"ko": "이 비디오는 접근할 수 없거나 삭제되었거나 개인 비디오로 설정되었습니다",
+		"ja": "このビデオはアクセスできないか、削除されているか、プライベートに設定されている可能性があります",
+		"en": "This video may be inaccessible, deleted or set to private"
+	},
+	"luqzd7j": {
+		"zh-cn": "链接必须是完整的YouTube视频链接",
+		"ko": "링크는 전체 유튜브 동영상 링크여야 합니다",
+		"ja": "リンクはYouTubeの完全なリンクでなければなりません",
+		"en": "The link must be a complete YouTube video link"
+	},
+	"kczcr914": {
+		"zh-cn": "部分地区可能无法访问YouTube，请确保您的网络环境可以正常访问YouTube",
+		"ko": "일부 지역에서 유튜브에 접속할 수 없을 수도 있습니다. 인터넷 환경에서 정상적으로 유튜브에 접속할 수 있는지 확인하십시오",
+		"ja": "一部の地域ではYouTubeにアクセスできない場合がありますが、必ずあなたのネットワーク環境でYouTubeにアクセスできるようにしてください。",
+		"en": "YouTube may not be accessible in some areas. Please ensure that your network environment can access YouTube normally"
+	},
+	"wc966yp": {
+		"zh-cn": "由于视频文件较大，下载可能需要较长时间，请耐心等待",
+		"ko": "동영상 파일이 비교적 크기 때문에 다운로드하는 데 시간이 좀 걸릴 수도 있으니 참고 기다려 주십시오",
+		"ja": "動画ファイルが大きいため、ダウンロードに時間がかかることがありますが、お待ちください",
+		"en": "Due to the large size of the video file, the download may take a long time. Please be patient and wait"
+	},
+	"gd1jgxn": {
+		"zh-cn": "部分浏览器可能会阻止下载，请尝试使用其他浏览器",
+		"ko": "일부 브라우저는 다운로드를 차단할 수 있습니다. 다른 브라우저를 사용해 보십시오",
+		"ja": "一部のブラウザではダウンロードができない場合がありますので、他のブラウザをお試しください。",
+		"en": "Some browsers may block the download. Please try using other browsers"
+	},
+	"w9qtgmf": {
+		"zh-cn": "请输入正确的YouTube链接",
+		"ko": "올바른 유튜브 링크를 입력해 주세요",
+		"ja": "正しいYouTubeのリンクをお願いします",
+		"en": "Please enter the correct YouTube link"
+	},
+	"b4ztz7p": {
+		"zh-cn": "YouTube视频解析可能需要一些时间，请耐心等待",
+		"ko": "유튜브 동영상 해설에 다소 시간이 걸릴 수 있으니 기다려 주세요",
+		"ja": "YouTube動画の解析には時間がかかるかもしれませんが、お待ちください",
+		"en": "The video analysis on YouTube may take some time. Please wait patiently"
+	},
+	"1rldc0e": {
+		"zh-cn": "YouTube视频无水印下载",
+		"ko": "유튜브 동영상 다운로드 가능",
+		"ja": "YouTubeビデオ透かしなしダウンロードします",
+		"en": "Download YouTube videos without watermarks"
+	},
+	"7qm3ims": {
+		"zh-cn": "快速、高质量地下载YouTube视频，支持多种分辨率选择",
+		"ko": "다양한 해상도로 선택할 수 있도록 유튜브 동영상을 빠르고 고품질로 다운로드",
+		"ja": "YouTubeの動画を高速かつ高品質にダウンロードできます",
+		"en": "Download YouTube videos quickly and with high quality, supporting multiple resolution options"
+	},
+	"qz0b0se": {
+		"zh-cn": "请输入YouTube视频链接",
+		"ko": "유튜브 동영상 링크를 입력해 주세요",
+		"ja": "YouTubeのリンクをお願いします",
+		"en": "Please enter the YouTube video link"
+	},
+	"khe627": {
+		"zh-cn": "选择视频分辨率",
+		"ko": "비디오 해상도 선택",
+		"ja": "解像度を選択します",
+		"en": "Select the video resolution"
+	},
+	"fwdllxj": {
+		"zh-cn": "为什么选择我们的YouTube解析工具",
+		"ko": "왜 유튜브 도구를 선택하셨나요",
+		"ja": "なぜYouTubeの解析ツールを選んだのでしょう",
+		"en": "Why choose our YouTube parsing tool"
+	},
+	"8y27iq5": {
+		"zh-cn": "多种分辨率",
+		"ko": "다해상도",
+		"ja": "様々な解像度です",
+		"en": "Multiple resolutions"
+	},
+	"waw6ugg": {
+		"zh-cn": "提供多种分辨率选择，满足不同需求",
+		"ko": "다양한 해상도를 제공하여 다양한 요구를 만족시킨다",
+		"ja": "さまざまな解像度のオプションを用意し、ニーズに応えています。",
+		"en": "It offers multiple resolution options to meet different needs"
+	},
+	"k4l4d54": {
+		"zh-cn": "高速下载",
+		"ko": "고속 다운로드",
+		"ja": "高速ダウンロードです",
+		"en": "High-speed download"
+	},
+	"v1jkl6e": {
+		"zh-cn": "优化的下载速度，节省您的时间",
+		"ko": "다운로드 속도를 최적화하여 시간을 절약합니다",
+		"ja": "最適化されたダウンロード速度で時間を節約できます",
+		"en": "Optimized download speed saves your time"
 	}
 }

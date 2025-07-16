@@ -1,7 +1,7 @@
 import AuthRoute from '@/components/AuthRoute'
 import Layout from '@/layout'
 import { lazy } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 
 const routes = createBrowserRouter([
   {
@@ -17,8 +17,16 @@ const routes = createBrowserRouter([
     ),
     children: [
       {
+        path: '/',
+        element: <Navigate to="/home" replace />,
+      },
+      {
         path: '/home',
         Component: lazy(() => import('@/pages/Home')),
+      },
+      {
+        path: '/youtube',
+        Component: lazy(() => import('@/pages/Youtube')),
       },
       {
         path: '/test',

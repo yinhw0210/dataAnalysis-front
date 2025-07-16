@@ -1,9 +1,12 @@
 import { GithubFilled } from '@ant-design/icons'
 import { Badge, Button, Dropdown } from 'antd'
 import { useCallback, useMemo, useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 
 function Header() {
   const [key, setkey] = useState<string>(window.localStorage.getItem('lang') || 'zhcn')
+  const location = useLocation()
+
   const onHandleChange = useCallback((_key: string) => {
     if (key === _key) {
       return
@@ -78,6 +81,21 @@ function Header() {
     return items.find(item => item.key === key)?.label
   }, [key, items])
 
+  const navItems = useMemo(() => {
+    return [
+      {
+        key: '/home',
+        label: $t('首页'),
+        path: '/home',
+      },
+      {
+        key: '/youtube',
+        label: $t('YouTube解析'),
+        path: '/youtube',
+      },
+    ]
+  }, [])
+
   return (
     <div className="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
       <nav className="max-w-[1200px] mx-auto px-4 sm:px-6 h-16">
@@ -89,7 +107,20 @@ function Header() {
             <span className="text-[12px] text-gray-500 ml-[8px]">相信成长的力量</span>
           </div>
           <div className="flex items-center gap-4">
-
+            {navItems.map(item => (
+              <NavLink
+                key={item.key}
+                to={item.path}
+                className={({ isActive }) =>
+                  `px-4 py-2 font-medium transition-colors ${
+                    isActive || location.pathname === item.path
+                      ? 'text-blue-600'
+                      : 'text-gray-600 hover:text-blue-500'
+                  }`}
+              >
+                {item.label}
+              </NavLink>
+            ))}
           </div>
           <div className="flex gap-4 items-center">
             <a href="https://github.com/yinhw0210" target="_blank" rel="noreferrer"><GithubFilled className="text-xl" /></a>

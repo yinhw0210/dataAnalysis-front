@@ -34,6 +34,19 @@ class AnalyzeService {
     })
   }
 
+  getYoutube(url: string, quality: string) {
+    return request<Blob>({
+      method: 'get',
+      url: '/youtube/download',
+      params: {
+        url,
+        quality,
+      },
+      responseType: 'blob',
+      name: 'YouTube解析',
+    })
+  }
+
   getAnalyzeResult(url: string) {
     return request<API.Analyze.AnalyzeResult>({
       method: 'post',
