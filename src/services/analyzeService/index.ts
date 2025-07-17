@@ -37,7 +37,7 @@ class AnalyzeService {
   getYoutube(url: string, quality: string) {
     return request<Blob>({
       method: 'get',
-      url: '/youtube/download',
+      url: '/analyze/youtube',
       params: {
         url,
         quality,
